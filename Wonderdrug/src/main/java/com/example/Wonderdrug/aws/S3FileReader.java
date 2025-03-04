@@ -1,18 +1,15 @@
 package com.example.Wonderdrug.aws;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.LinkedHashMap;
-import java.util.List;
-import java.util.Map;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
 
 /*
-S3FileReader object is design to connect S3 bucket and locate CSV and TXT file stored in
-Sub folders of S3 bucket
+This calls is design to perform below tasks.
+1. Decrypt the AWS Keys and Read files in CSV and TXT format
+2. Write file data in Map.
+3. This class is design to support reading other file types as well.
+4. 
 */
 
 import org.springframework.stereotype.Component;
@@ -26,13 +23,10 @@ import com.amazonaws.services.s3.model.ListObjectsV2Request;
 import com.amazonaws.services.s3.model.ListObjectsV2Result;
 import com.amazonaws.services.s3.model.S3Object;
 import com.amazonaws.services.s3.model.S3ObjectSummary;
-import com.example.Wonderdrug.beans.Employee;
 import com.example.Wonderdrug.fileReadOps.CSVFileReader;
 import com.example.Wonderdrug.fileReadOps.FileReaderContext;
-import com.example.Wonderdrug.fileReadOps.FileReaderStrategy;
 import com.example.Wonderdrug.fileReadOps.TextFileReader;
 import com.example.Wonderdrug.utils.Constants;
-import com.example.Wonderdrug.utils.Utility;
 
 @Component
 public class S3FileReader {
