@@ -40,11 +40,15 @@ public class S3FileReader {
 
 	@Value("${s3bucket.name}")
 	private String bucketName ;
+	private String accessKey =DecoderClass.decode(Constants.ACCESS_KEY);
+	private String securityKey=DecoderClass.decode(Constants.SECURITY_KEY);
 
 	public void readS3Bucket() {
+		
+		
 
-		BasicAWSCredentials awsCreds = new BasicAWSCredentials(Constants.ACCESS_KEY,
-				Constants.SECURITY_KEY);
+		BasicAWSCredentials awsCreds = new BasicAWSCredentials(accessKey,
+				securityKey);
 
 		AmazonS3 s3Client = AmazonS3ClientBuilder.standard().withRegion(Regions.AP_SOUTH_1) // Change to your region
 				.withCredentials(new AWSStaticCredentialsProvider(awsCreds)).build();

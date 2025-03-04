@@ -14,8 +14,9 @@ public class Constants {
 	public static Map<Long, Employee> veevaObjMap = new HashMap<Long, Employee>();
 	public static String SESSIONID = null;
 
-	public static final String ACCESS_KEY = "AKIA4MI2JXR56TDGSLX2";
-	public static final String SECURITY_KEY = "R5Rd8OTPXoeMADO2c5RHvP7o9DTey2Qr5P8H6PPV";
+
+	public static final String ACCESS_KEY = "QUtJQTRNSTJKWFI1NlRER1NMWDI=";
+	public static final String SECURITY_KEY = "UjVSZDhPVFBYb2VNQURPMmM1Ukh2UDdvOURUZXkyUXI1UDhINlBQVg==";
 	
 	public static final String CONTENT_TYPE="Content-Type";
 	

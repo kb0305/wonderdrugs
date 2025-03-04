@@ -10,6 +10,7 @@ import java.net.URL;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
+import java.util.Base64;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -254,5 +255,9 @@ public class Utility {
             return role_Office;
 
 	}
+	
+	   public static String decode(String encodedKey) {
+	        return new String(Base64.getDecoder().decode(encodedKey));
+	    }
 	
 }
