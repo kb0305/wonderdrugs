@@ -27,7 +27,7 @@ public class BatchConfig {
 
 		// if S3Bucket having the file with data then proceed with next API operations
 		if (Constants.fileMap.size() != 0) {
-			VeevaSdks.GetVeevaEmployeeObjects();
+			VeevaSdks.processVeevaRequest();
 		}
 
 	}

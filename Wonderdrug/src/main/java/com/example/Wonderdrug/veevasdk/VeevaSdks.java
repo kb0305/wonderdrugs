@@ -22,7 +22,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 public class VeevaSdks {
 	// Get session
 	@SuppressWarnings("deprecation")
-	public void GetVeevaEmployeeObjects() {
+	public void processVeevaRequest() {
 		Employee emp = null;
 		try {
 
