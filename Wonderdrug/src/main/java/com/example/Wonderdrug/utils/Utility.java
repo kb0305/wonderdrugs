@@ -186,10 +186,11 @@ public class Utility {
 	}
 
 	public static void refineFileData(String[] val) {
-		Employee employee;
+			Employee employee;
 			Map<String,String> roleMap=Utility.readCSV("role_picklist.csv");
 			Map<String,String> officeMap=Utility.readCSV("office_object.csv");
 
+	 try {		
 		// Employee ID|Office|First Name|Last Name|Role|On Board Date|id
 		if (val.length != 0) {
 			//1-Office
@@ -210,6 +211,9 @@ public class Utility {
 				//logger.info("Total rows in file  :: "+Constants.fileMap.size());
 			}
 		}
+	 }catch(Exception e) {
+		 e.printStackTrace();
+	 }
 	}
 
 	private static String ConvertDateFormat(String string) {

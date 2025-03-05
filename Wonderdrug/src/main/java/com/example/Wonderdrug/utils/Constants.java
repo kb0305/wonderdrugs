@@ -13,6 +13,7 @@ public class Constants {
 	public static Map<Long, Employee> fileMap = new HashMap<Long, Employee>();
 	public static Map<Long, Employee> veevaObjMap = new HashMap<Long, Employee>();
 	public static String SESSIONID = null;
+	public static final String COMPLETE = "Completed/";
 
 
 	public static final String ACCESS_KEY = "QUtJQTRNSTJKWFI1NlRER1NMWDI=";
@@ -32,6 +33,7 @@ public class Constants {
 														+ "fields=id,first_name__c,last_name__c,"
 														+ "employee_id__c,on_board_date__c,name__v,role__c";
 	public static final String VAULT_URL_CRUDE_OBJECT = "https://mssandbox-clinical.veevavault.com/api/v24.3/vobjects/employee__c";
+
 														 
 
 }
