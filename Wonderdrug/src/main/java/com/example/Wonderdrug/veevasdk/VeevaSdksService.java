@@ -19,9 +19,10 @@ import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 @Component
-public class VeevaSdks {
+public class VeevaSdksService implements VeevaService {
 	// Get session
 	@SuppressWarnings("deprecation")
+	@Override
 	public void processVeevaRequest() {
 		Employee emp = null;
 		try {

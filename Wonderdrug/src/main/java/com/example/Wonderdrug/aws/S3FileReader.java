@@ -19,8 +19,6 @@ import com.amazonaws.auth.BasicAWSCredentials;
 import com.amazonaws.regions.Regions;
 import com.amazonaws.services.s3.AmazonS3;
 import com.amazonaws.services.s3.AmazonS3ClientBuilder;
-import com.amazonaws.services.s3.model.CopyObjectRequest;
-import com.amazonaws.services.s3.model.DeleteObjectRequest;
 import com.amazonaws.services.s3.model.ListObjectsV2Request;
 import com.amazonaws.services.s3.model.ListObjectsV2Result;
 import com.amazonaws.services.s3.model.S3Object;
@@ -29,11 +27,10 @@ import com.example.Wonderdrug.fileReadOps.CSVFileReader;
 import com.example.Wonderdrug.fileReadOps.FileReaderContext;
 import com.example.Wonderdrug.fileReadOps.FileTransfer;
 import com.example.Wonderdrug.fileReadOps.TextFileReader;
-import com.amazonaws.services.s3.model.PutObjectRequest;
 import com.example.Wonderdrug.utils.Constants;
 
 @Component
-public class S3FileReader {
+public class S3FileReader implements FileReaderService {
 	private static final Logger logger = LoggerFactory.getLogger(S3FileReader.class);
 
 	@Value("${s3bucket.name}")
@@ -41,8 +38,8 @@ public class S3FileReader {
 	private String accessKey =DecoderClass.decode(Constants.ACCESS_KEY);
 	private String securityKey=DecoderClass.decode(Constants.SECURITY_KEY);
 	
-
-	public void readS3Bucket() {
+	@Override
+	public void readS3Bucket()  {
 		
 		String complete=Constants.COMPLETE;
 		String file;
